@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASYPRINT — แสดงยอดขาย</title>
+    <link rel="stylesheet" href="Sales_statistics.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+ 
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">EasyPrint</div>
+
+        <div class="searchbar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="searchInput" placeholder="ค้นหาออเดอร์" />
+          </div>
+
+        <div class="icons">
+          <div class="toggle-container">
+            <span>สถานะร้าน</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+     
+          <div class="notification-icon" onclick="goToNotification()">
+            <i class="fa fa-bell"></i>
+          </div>
+ 
+            <div class="profile-icon" onclick="toggleProfilePopup()">
+                <i class="fa fa-user-circle"></i>
+   
+                <div class="profile-popup" id="profilePopup">
+                    <div class="profile-img">
+                        <img src="profile.png" alt="โปรไฟล์ร้านค้า">
+                    </div>
+                <div class="profile-name">ร้าน EASYPRINT</div>
+                <hr>
+               
+                <a href="../Edit_profile/Edit_profile.html" class="profile-btn">
+                    <i class="fa-solid fa-user"></i>
+                    <span>แก้ไขโปรไฟล์</span>
+                </a>
+           
+                <a href="../login/login.html" class="profile-btn logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>ออกจากระบบ</span>
+                </a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+     <aside class="app-sidebar" id="sidebar">
+        <nav>
+          <a href="../Main_shop/Main_shop.html"><i class="fa-solid fa-house"></i> หน้าหลัก</a>
+          <a href="../order/main_Or/main_Or.html"><i class="fa-solid fa-receipt"></i> รายการคำสั่งซื้อ</a>
+          <h6>กำหนดบริการ</h6>
+          <a href="../product/product.html"><i class="fa-solid fa-box"></i> สินค้า</a>
+          <a href="../Add_product/Add_product.html"><i class="fa-solid fa-circle-plus"></i> เพิ่มสินค้า</a>
+          <a href="../Set_shipping_costs/Set_shipping_costs.html"><i class="fa-solid fa-money-check-dollar"></i> กำหนดค่าจัดส่ง</a>
+ 
+          <h6>แสดงยอดขาย</h6>
+          <a href="../Sales_statistics/Sales_statistics.html"><i class="fa-solid fa-chart-line"></i> แสดงยอดขาย</a>
+        </nav>
+      </aside>
+
+        <main class="main-content">
+            <h2>ยอดขายทั้งหมด</h2>
+
+            <div class="sales-filter">
+                <button class="filter-btn active" data-period="daily">รายวัน</button>
+                <button class="filter-btn" data-period="weekly">รายสัปดาห์</button>
+                <button class="filter-btn" data-period="monthly">รายเดือน</button>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <div class="sales-table-container">
+                <table id="salesTable">
+                    <thead>
+                        <tr>
+                        <th>วันที่ / สัปดาห์ / เดือน</th>
+                        <th>โปสเตอร์ (บาท)</th>
+                        <th>โรลอัพ (บาท)</th>
+                        <th>เอ็กสแตน (บาท)</th>
+                        </tr>
+                    </thead>
+                <tbody>
+            </tbody>
+        </table>
+    </div>
+  </main>
+
+        <script src="Sales_statistics.js"></script>
+
+</body>
+</html>

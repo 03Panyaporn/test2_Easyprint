@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถานะการสั่งซื้อ : รับงาน</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+</head>
+
+<body>
+    <div class="status-bar">
+        <span class="dot"></span> สถานะร้านค้า : เปิดบริการ
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-wrapper">
+             <div class="logo">
+                <img src="icon/printer0.svg" alt="Logo" class="logo-icon"> EASYPRINT
+            </div>
+                        <div class="rectangle-81" id="locationBtn">
+                <img src="icon/location-on0.svg" alt="Location">
+                <span id="selectedLocations">ตำแหน่งปัจจุบัน</span>
+                <img src="icon/chevron-down0.svg" alt="Dropdown">
+
+                <!-- Dropdown container -->
+                <div class="location-menu" id="locationMenu">
+                    <div class="location-option">
+
+                        <label class="option-content">
+                            <input type="radio" name="address" value="ตำแหน่งปัจจุบัน">
+                            <span class="option-title">ตำแหน่งปัจจุบัน</span>
+                        </label>
+
+                    </div>
+                    <span class="option-title" style="margin-left: 20px; font-size:medium;">ตำแหน่งที่บันทึกไว้</span>
+                    <!-- บ้าน -->
+                    <div class="location-option">
+
+                        <label class="option-content">
+                            <input type="radio" name="address" value="บ้าน">
+                            <span class="option-title">บ้าน</span>
+                        </label>
+
+                        <div class="option-detail">
+                            สมใจ ทันที<br>
+                            75/1 , หมู่ 7 , ตำบลงาว<br>
+                            อำเภองาว , จังหวัดลำปาง 52110<br>
+                            080-000-1111
+                        </div>
+                        <div class="option-actions">
+                            <button class="edit-btn" title="แก้ไข"><img src="../main/icon/edit-30.svg" alt="แก้ไข"></button>
+                            <button class="delete-btn" title="ลบ"><img src="../main/icon/trash-20.svg" alt="ลบ"></button>
+                        </div>
+                    </div>
+
+                    <!-- ที่ทำงาน -->
+                    <div class="location-option">
+                        <label class="option-content">
+                            <input type="radio" name="address" value="ที่ทำงาน">
+                            <span class="option-title">ที่ทำงาน</span>
+                        </label>
+
+                        <div class="option-detail">
+                            สมหมาย ทันที<br>
+                            123 , หมู่ 4 , ตำบลแม่กา<br>
+                            อำเภอเมืองพะเยา , จังหวัดพะเยา ,56000<br>
+                            042-000-333
+                        </div>
+                        <div class="option-actions">
+                            <button class="edit-btn" title="แก้ไข"><img src="../main/icon/edit-30.svg" alt="แก้ไข"></button>
+                            <button class="delete-btn" title="ลบ"><img src="../main/icon/trash-20.svg" alt="ลบ"></button>
+                        </div>
+                    </div>
+
+                    <!-- เพิ่มที่อยู่ใหม่ -->
+                    <a href="../addaddress/address.html" class="location-option add-location">+ เพิ่มที่อยู่ใหม่</a>
+
+                </div>
+            </div>
+    </div>
+    <div class="menu">
+      <a href="../main/index.html"><img src="icon/home0.svg" alt="">หน้าหลัก</a>
+      <a href="#"><img src="icon/bell0.svg" alt="">ติดตามคำสั่งซื้อ</a>
+      <a href="../cart/cart.html"><img src="icon/shopping-cart0.svg" alt=""></a>
+      <span class="divider">|</span>
+      <div class="user-dropdown">
+                <a href="#" id="userBtn">
+                    <div>
+                        <img src="icon/user0.svg" alt="User" class="ellipse-57">
+                    </div>
+                </a>
+
+                <!-- Dropdown เมนู -->
+                <div class="profile-card" id="userMenu">
+                    <div class="profile-icon">
+                        <img src="icon/user0.svg" alt="Profile" class="profile-img">
+                    </div>
+
+                    <div class="profile-info">
+                        <p class="profile-name">สมศรี นอนน้อย</p>
+                        <p class="profile-name">somjai@gmail.com</p>
+                        <p class="profile-name"><a href="#">แก้ไขโปรไฟล์</a></p>
+                    </div>
+                    <a href="../login/login.html">
+                    <button class="logout-btn">ออกจากระบบ</button></a>
+                </div>
+            </div>
+    </header>
+
+    <!-- ครอบเนื้อหาหลักด้วย main -->
+    <main>
+        <section class="order-status">
+            <div class="status-header">สถานะของสินค้า</div>
+            <div class="progress">
+                <div class="progress-step active">
+                    <div class="icon">📄</div>
+                    <span>รับงานแล้ว</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="icon">💳</div>
+                    <span>ตรวจสอบการชำระเงิน</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="icon">🖨️</div>
+                    <span>กำลังดำเนินการ</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="icon">🚚</div>
+                    <span>กำลังจัดส่ง</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="icon">📦</div>
+                    <span>จัดส่งสำเร็จแล้ว</span>
+                </div>
+            </div>
+            <div class="status-note">รอตรวจสอบการชำระเงิน</div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <p>© 2025 EASYPRINT</p>
+        </div>
+        <div class="footer-right">
+            <img src="png/image-3.png" alt="LINE" class="footer-icon">
+            <div class="footer-contact">
+                <p><b>ติดต่อสอบถาม</b></p>
+                <p>LINE : @EASYPRINT</p>
+                <p>โทร : 080-999-9999</p>
+                <p>Email : easyprint@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    const userBtn = document.getElementById("userBtn");
+    const userMenu = document.getElementById("userMenu");
+    const locationBtn = document.getElementById('locationBtn');
+    const locationMenu = document.getElementById('locationMenu');
+    const selectedSpan = document.getElementById('selectedLocation');
+
+    locationBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        locationMenu.style.display = locationMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', () => locationMenu.style.display = 'none');
+
+    document.querySelectorAll('.location-option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.checked) {
+                selectedSpan.innerText = this.value;
+
+            }
+        });
+    });
+
+    document.querySelectorAll('.location-option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('selectedLocations').innerText = this.value;
+
+            }
+        });
+    });
+
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            window.location.href = "../editaddress/address.html"; 
+    });
+    });
+
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const option = btn.closest('.location-option');
+
+            if (option) {
+                const confirmed = confirm("คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่นี้?");
+                if (confirmed) {
+                    option.remove();
+                    alert("ลบที่อยู่นี้เรียบร้อย");
+                }
+            }
+        });
+    });
+    userBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!userBtn.contains(e.target) && !userMenu.contains(e.target)) {
+            userMenu.style.display = "none";
+        }
+    });
+</script>
+</html>

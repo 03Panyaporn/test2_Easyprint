@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASYPRINT — หน้าหลัก</title>
+    <link rel="stylesheet" href="Set_shipping_costs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <script src="Set_shipping_costs.js"></script>
+ 
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">EasyPrint</div>
+ 
+        <div class="searchbar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="searchInput" placeholder="ค้นหาออเดอร์" />
+          </div>
+
+        <div class="icons">
+          <div class="toggle-container">
+            <span>สถานะร้าน</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="notification-icon" onclick="goToNotification()">
+            <i class="fa fa-bell"></i>
+          </div>
+ 
+            <div class="profile-icon" onclick="toggleProfilePopup()">
+                <i class="fa fa-user-circle"></i>
+   
+                <div class="profile-popup" id="profilePopup">
+                    <div class="profile-img">
+                        <img src="profile.png" alt="โปรไฟล์ร้านค้า">
+                    </div>
+                <div class="profile-name">ร้าน EASYPRINT</div>
+                <hr>
+               
+                <a href="../Edit_profile/Edit_profile.html" class="profile-btn">
+                    <i class="fa-solid fa-user"></i>
+                    <span>แก้ไขโปรไฟล์</span>
+                </a>
+           
+                <a href="../login/login.html" class="profile-btn logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>ออกจากระบบ</span>
+                </a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+     <aside class="app-sidebar" id="sidebar">
+        <nav>
+          <a href="../Main_shop/Main_shop.html"><i class="fa-solid fa-house"></i> หน้าหลัก</a>
+          <a href="../order/main_Or/main_Or.html"><i class="fa-solid fa-receipt"></i> รายการคำสั่งซื้อ</a>
+          <h6>กำหนดบริการ</h6>
+          <a href="../product/product.html"><i class="fa-solid fa-box"></i> สินค้า</a>
+          <a href="../Add_product/Add_product.html"><i class="fa-solid fa-circle-plus"></i> เพิ่มสินค้า</a>
+          <a href="../Set_shipping_costs/Set_shipping_costs.html"><i class="fa-solid fa-money-check-dollar"></i> กำหนดค่าจัดส่ง</a>
+ 
+          <h6>แสดงยอดขาย</h6>
+          <a href="../Sales_statistics/Sales_statistics.html"><i class="fa-solid fa-chart-line"></i> แสดงยอดขาย</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <h1 class="page-title">เพิ่มสินค้า</h1>
+      
+        <table class="shipping-table">
+          <thead>
+            <tr>
+              <th>ขนส่ง</th>
+              <th>ค่าจัดส่ง (บาท)</th>
+              <th>สถานะ / กำหนดค่าจัดส่ง</th>
+            </tr>
+          </thead>
+      
+          <tbody>
+            <tr>
+              <td>ไปรษณีย์ไทย</td>
+              <td>45</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+                <button class="edit-btn">กำหนดค่าจัดส่ง</button>
+              </td>
+            </tr>
+            <tr>
+              <td>ไปรษณีย์ไทย EMS</td>
+              <td>60</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+                <button class="edit-btn">กำหนดค่าจัดส่ง</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Kerry Express</td>
+              <td>55</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+                <button class="edit-btn">กำหนดค่าจัดส่ง</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Flash Express</td>
+              <td>55</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+                <button class="edit-btn">กำหนดค่าจัดส่ง</button>
+              </td>
+            </tr>
+            <tr>
+              <td>J&T Express</td>
+              <td>55</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+                <button class="edit-btn">กำหนดค่าจัดส่ง</button>
+              </td>
+            </tr>
+            <tr>
+              <div id="popup" class="popup">
+                <div class="popup-content">
+                  <h4>กำหนดค่าจัดส่ง</h4>
+                 
+                  <div class="form-group">
+                    <label>ค่าจัดส่ง:</label>
+                    <input type="number" placeholder="กรอกค่าจัดส่ง">
+                  </div>            
+
+                  <div class="popup-footer">
+                    <button class="add-price" onclick="closePopup()">บันทึก</button>
+                  </div>
+                </div>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+      
+  </body>
+</html>
+      
